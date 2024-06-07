@@ -1,10 +1,13 @@
 import os
 import requests
+import streamlit as st
 from geopy.geocoders import Nominatim
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 
 #load env variable
-load_dotenv()
+#load_dotenv()
+
+#load streamlit env variable
 
 def get_coordinates (loc):
     #making an instance of Nominatim class
@@ -17,8 +20,10 @@ def get_coordinates (loc):
     return location.address,location.latitude,location.longitude
 
 def get_satellites(lat, lng):
-    api_key = os.getenv("API_KEY")
-    api_secret = os.getenv("API_SECRET")
+    #api_key = os.getenv("API_KEY")
+    #api_secret = os.getenv("API_SECRET")
+    api_key = st.secrets["API_KEY"]
+    api_secret = st.secrets["API_SECRET"]
     url = f'https://api.n2yo.com/rest/v1/satellite/above/{lat}/{lng}/0/10/0&apiKey={api_secret}'
     response = requests.get(url)
     if response.status_code == 200:

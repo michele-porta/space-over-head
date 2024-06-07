@@ -3,6 +3,7 @@ import pandas as pd
 from space import get_coordinates, get_satellites
 
 DEFAULT_LOCATION= "Torino"
+loc= DEFAULT_LOCATION
 
 def satellites(location):
     if (len(location) == 0):
@@ -25,5 +26,4 @@ def satellites(location):
 )
 
 st.header(f":milky_way: Space over your head")
-location = st.text_input("Enter your location to know the list of satellites over your head in this moment", placeholder="Torino", max_chars=50)
-satellites(location)
+loc = st.text_input("Enter your location to know the list of satellites over your head in this moment", placeholder="Torino", max_chars=50, on_change= satellites(loc))

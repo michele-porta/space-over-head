@@ -6,6 +6,7 @@ DEFAULT_LOCATION= "Torino"
 loc= DEFAULT_LOCATION
 
 def satellites(location):
+    print (f"Call API with location {location}")
     if (len(location) == 0):
         #using default location
         location= DEFAULT_LOCATION

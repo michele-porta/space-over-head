@@ -11,9 +11,9 @@ It use the Pandas library to define a dataframe based on the json response of th
 
 You can insert your location and the app retrieve the latitude and the longitude using the [Nominatim](https://nominatim.org/) geocoder of OpenStreetMap.
 
-The application is based on [Streamlit](https://space-over-head.streamlit.app/), an interesting open-source Python framework useful for creating interactive web applications based on data.
+The application is based on [Streamlit](https://streamlit.io/), an interesting open-source Python framework useful for creating interactive web applications based on data.
 
-Here the link to access to the interactive web page demo: https://space-over-head.streamlit.app/
+Here the link to access to the interactive web page demo: https://space-over-your-head.streamlit.app/
 
 ## How to use in local
 You can clone the repo, install all the dependencies in *requirements.txt* file and create an *.env* file with your API key obtained from N2Y0.

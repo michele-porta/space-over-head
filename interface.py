@@ -32,4 +32,4 @@ def satellites():
 
 st.header(f":milky_way: Space over your head")
 st.text_input("Enter your location to know the list of satellites over your head in this moment", placeholder="Torino", max_chars=30, on_change= satellites, key='location')
-st.write("Open data location from OpenStreetMap")
+st.write("(Open data location from OpenStreetMap)")

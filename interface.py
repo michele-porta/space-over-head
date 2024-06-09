@@ -5,10 +5,13 @@ from space import get_coordinates, get_satellites
 DEFAULT_LOCATION= "Torino"
 
 def satellites():
-    location = st.session_state.location
     print (f"Call API with location {location}")
-    if (len(location) == 0):
-        #using default location
+    if st.session_state.location:
+        location = st.session_state.location
+        if (len(location) == 0):
+            #using default location
+            location= DEFAULT_LOCATION
+    else:
         location= DEFAULT_LOCATION
     address,lat,lng = get_coordinates(location)
     satellites_info= get_satellites(lat,lng)

@@ -7,14 +7,12 @@ from geopy.geocoders import Nominatim
 #load env variable
 #load_dotenv()
 
-#load streamlit env variable
-
 def get_coordinates (loc):
     #making an instance of Nominatim class
-    geolocator = Nominatim(user_agent="geo_request")
+    geolocator = Nominatim(user_agent="over_your_head")
     
     #applying geocode method to get the location
-    location = geolocator.geocode(loc,timeout=5)
+    location = geolocator.geocode(loc)
 
     #return address,lat,long
     return location.address,location.latitude,location.longitude

@@ -1,7 +1,6 @@
 import pandas as pd
 import streamlit as st
-from space import get_satellites
-from geopy.geocoders import Nominatim
+from space import get_coordinates, get_satellites
 
 DEFAULT_LOCATION= "Torino"
 
@@ -12,11 +11,8 @@ def satellites():
         if (len(st.session_state.location) == 0):
             #using default location if user done an empty search
             st.session_state.location = DEFAULT_LOCATION
-
-    geolocator = Nominatim(user_agent="geo_request")
-    location = geolocator.geocode(st.session_state.location)
-
-    address,lat,lng = location.address,location.latitude,location.longitude
+    
+    address,lat,lng = get_coordinates(st.session_state.location)
     satellites_info = get_satellites(lat,lng)
     n_of_satellites = satellites_info['info']['satcount']
     df = pd.json_normalize(satellites_info['above'])

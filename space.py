@@ -1,7 +1,7 @@
-#import os
+import os
 import requests
 import streamlit as st
-#from geopy.geocoders import Nominatim
+from geopy.geocoders import Nominatim
 #from dotenv import load_dotenv
 
 #load env variable
@@ -9,15 +9,15 @@ import streamlit as st
 
 #load streamlit env variable
 
-# def get_coordinates (loc):
-#     #making an instance of Nominatim class
-#     geolocator = Nominatim(user_agent="geo_request")
+def get_coordinates (loc):
+    #making an instance of Nominatim class
+    geolocator = Nominatim(user_agent="geo_request")
     
-#     #applying geocode method to get the location
-#     location = geolocator.geocode(loc)
+    #applying geocode method to get the location
+    location = geolocator.geocode(loc,timeout=5)
 
-#     #return address,lat,long
-#     return location.address,location.latitude,location.longitude
+    #return address,lat,long
+    return location.address,location.latitude,location.longitude
 
 def get_satellites(lat, lng):
     #api_key = os.getenv("API_KEY")

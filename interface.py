@@ -5,13 +5,13 @@ from space import get_coordinates, get_satellites
 DEFAULT_LOCATION= "Torino"
 
 def satellites():
-    print (f"Call API with location {location}")
     if 'location' not in st.session_state:
         st.session_state.location = DEFAULT_LOCATION
     else:
         if (len(st.session_state.location) == 0):
             #using default location if user done an empty search
-            location= DEFAULT_LOCATION
+            location = DEFAULT_LOCATION
+    print (f"Call API with location {location}")
     address,lat,lng = get_coordinates(st.session_state.location)
     satellites_info = get_satellites(lat,lng)
     n_of_satellites = satellites_info['info']['satcount']

@@ -10,8 +10,8 @@ def satellites():
     else:
         if (len(st.session_state.location) == 0):
             #using default location if user done an empty search
-            location = DEFAULT_LOCATION
-    print (f"Call API with location {location}")
+            st.session_state.location = DEFAULT_LOCATION
+    print (f"Call API with location {st.session_state.location}")
     address,lat,lng = get_coordinates(st.session_state.location)
     satellites_info = get_satellites(lat,lng)
     n_of_satellites = satellites_info['info']['satcount']

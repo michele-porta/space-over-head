@@ -2,6 +2,8 @@
 
 A simple web application useful to see the number and the information of satellites over your head.
 
+![example](images/result%20example.png)
+
 ## How it work
 
 The app have a python backend, with a call of [N2YO API](https://www.n2yo.com/api/).
